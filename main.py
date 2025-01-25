@@ -11,10 +11,13 @@ CORS(app)
 DB_CONFIG = {
     "host": "localhost",
     "user": "root",
-    "password": "",
+    "password": "1234",
     "database": "creaqtech"
 }
 
+@app.route("/")
+def get_home():
+    return "hello world"
 
 def get_db_connection():
     """Establish a new database connection."""
