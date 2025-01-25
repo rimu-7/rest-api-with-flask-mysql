@@ -9,10 +9,10 @@ CORS(app)
 
 # Database configuration
 DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "1234",
-    "database": "creaqtech"
+    "host": "sql12.freesqldatabase.com",
+    "user": "sql12759567",
+    "password": "hs9gUGyBB9",
+    "database": "sql12759567"
 }
 
 @app.route("/")
