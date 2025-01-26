@@ -3,6 +3,7 @@ from flask_cors import CORS
 import pymysql
 import base64
 import json
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -15,9 +16,11 @@ DB_CONFIG = {
     "database": "sql12759567"
 }
 
+
 @app.route("/")
 def get_home():
     return "hello world"
+
 
 def get_db_connection():
     """Establish a new database connection."""
@@ -111,4 +114,6 @@ def get_products():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Vercel uses PORT from the environment
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
